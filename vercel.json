@@ -1,4 +1,8 @@
+
 {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
   "builds": [
     {
       "src": "liedetection/wsgi.py",
