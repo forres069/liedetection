@@ -1,15 +1,13 @@
 {
-    "builds": [
-      {
+    "builds": [{
         "src": "liedetection/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10.10" }
+    }],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "liedetection/wsgi.py"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "liedetection/wsgi.py"
+        }
     ]
-  }
-  
+}
