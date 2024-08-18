@@ -1,13 +1,26 @@
-
 {
-  "routes": [
+  "builds": [
     {
-      "src": "/",
-      "dest": "/"
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
     },
     {
-      "src": "/",
-      "dest": "/video_feed"
+      "src": "/liedetection/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "liedetection/wsgi.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     }
   ]
 }
