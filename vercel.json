@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "manage.py",
+        "use": "@vercel/python",
+        "config": { "runtime": "python3.10.10" }
+      },
+      {
+        "src": "staticfiles/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/staticfiles/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "manage.py"
+      }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "liedetection.settings",
+      "SECRET_KEY": "@django-insecure-rvoxrotm(@*2leduul+l7_zg_$i3z^bcv!sbkj)g0q__r*mka_",
+      "DEBUG": "false"
+    },
+    "static": {
+      "public": "staticfiles"
+    }
+  }
+  
