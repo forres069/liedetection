@@ -1,25 +1,13 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "manage.py",
+    "builds": [{
+        "src": "liedetection/wsgi.py",
         "use": "@vercel/python",
-        "config": { "runtime": "python3.10.10" }
-      },
-      {
-        "src": "staticfiles/**",
-        "use": "@vercel/static"
-      }
-    ],
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10.10" }
+    }],
     "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/staticfiles/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "manage.py"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "liedetection/wsgi.py"
+        }
     ]
-  }
-  
+}
