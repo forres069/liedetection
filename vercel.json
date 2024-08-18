@@ -9,8 +9,8 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "liedetection/wsgi.py"
+      "src": "/",
+      "dest": "/"
     }
   ]
 }
