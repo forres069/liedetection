@@ -10,10 +10,4 @@
       "config": { "maxLambdaSize": "15mb" }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "liedetection/wsgi.py"
-    }
-  ]
 }
