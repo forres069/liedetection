@@ -1,16 +1,13 @@
 
 {
-  "builds": [
-    {
-      "src": "liedetection/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb" }
-    }
-  ],
   "routes": [
     {
       "src": "/",
       "dest": "/"
+    },
+    {
+      "src": "/",
+      "dest": "/video_feed"
     }
   ]
 }
