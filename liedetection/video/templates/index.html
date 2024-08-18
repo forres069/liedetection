@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Stream</title>
+</head>
+<body>
+    <h1>Video Stream</h1>
+    
+    <button id="start-camera">Start Camera</button>
+    
+    <button id="stop-camera" style="display:none;">Stop Camera</button>
+
+    <img id="video-stream" src="" width="33%" height="480" style="display:none;">
+
+    <script>
+        document.getElementById('start-camera').addEventListener('click', function() {
+            var videoStream = document.getElementById('video-stream');
+            var stopButton = document.getElementById('stop-camera');
+            var startButton = document.getElementById('start-camera');
+            
+            videoStream.src = "{% url 'video_feed' %}";
+            videoStream.style.display = 'block'; 
+            stopButton.style.display = 'inline'; 
+            startButton.style.display = 'none';
+        });
+
+        document.getElementById('stop-camera').addEventListener('click', function() {
+            var videoStream = document.getElementById('video-stream');
+            var stopButton = document.getElementById('stop-camera');
+            var startButton = document.getElementById('start-camera');
+            
+            videoStream.src = "";
+            videoStream.style.display = 'none';
+            stopButton.style.display = 'none'; 
+            startButton.style.display = 'inline';
+        });
+    </script>
+</body>
+</html>
