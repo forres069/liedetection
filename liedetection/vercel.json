@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "liedetection/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "liedetection/wsgi.py"
+      }
+    ]
+  }
+  
