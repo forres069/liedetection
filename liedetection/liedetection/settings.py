@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "liedetection.wsgi.application"
+WSGI_APPLICATION = "liedetection.wsgi.app"
 
 
 # Database
